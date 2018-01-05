@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import App from './App';
+import Main from './src/main.js';
 
-AppRegistry.registerComponent('coolblog', () => App);
+AppRegistry.registerComponent('coolblog', () => Main);

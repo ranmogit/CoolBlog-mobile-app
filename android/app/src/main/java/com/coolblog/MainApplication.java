@@ -40,8 +40,8 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     super.onCreate();
-    mPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-    mPreferences.edit().putString("debug_http_host","localhost:8089").commit();
+    // mPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+    // mPreferences.edit().putString("debug_http_host","localhost:8089").commit();
     SoLoader.init(this, /* native exopackage */ false);
   }
 }
