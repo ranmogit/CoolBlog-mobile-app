@@ -16,13 +16,13 @@ import {
 } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-// import Homepage  from './page/home'; 
+import Homepage  from './page/home'; 
 
-const HomeScreen = () => (
-  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <Text>Home Screend</Text>
-  </View>
-);
+// const HomeScreen = () => (
+//   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+//     <Text>Home Screend</Text>
+//   </View>
+// );
 const DetailsScreen = () => (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
     <Text>Details Screen</Text>
@@ -31,7 +31,7 @@ const DetailsScreen = () => (
 
 const HomeS = StackNavigator({
   Home: {
-    screen: HomeScreen,
+    screen: Homepage,
     navigationOptions: {
       headerTitle: 'Home',
     },
@@ -52,9 +52,9 @@ const Main = TabNavigator({
       tabBarLabel: 'Home',
       tabBarIcon: () => (
         <Icon 
-          name= 'qq'
+          name= {'home'}
           size={26}
-          color="#900"
+          // color="#900"
         />
       ),
     },
@@ -67,7 +67,7 @@ const Main = TabNavigator({
         <Icon 
           name={'rocket'}
           size={26}
-          color="#900"
+          // color="#900"
         />
       ),
     },
