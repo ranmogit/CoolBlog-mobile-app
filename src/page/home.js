@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 // import fetch from '../../../../../../AppData/Local/Microsoft/TypeScript/2.6/node_modules/@types/node-fetch';
 import BlogItem from './Components/blogItem'
+import GlobleStyles from '../res/styles/GlobleStyles'
 
 export default class Homepage extends Component {
   constructor(props) {
@@ -44,26 +45,21 @@ export default class Homepage extends Component {
       .catch((error) => { console.error(error); });
 
   }
-  _renderItem(blog,i) {
-    return <BlogItem key ={i} detail={blog} />
+  _renderItem(blog, i) {
+    return <BlogItem key={i} detail={blog} />
   }
 
   render() {
-    // let renderItem = this.state.blogs.map((value) =>
-    //   <blogItem 
-    //   key = {value.blogid}  
-    //   blogid={value.blogid}
-    //     thumpreview={value.thumpreview}
-    //     title={value.title}
-    //     summary={value.summary}
-    //     updatetime={value.updatetime}
-    //     userid={value.userid}
-    //   />);
     return (
       <View style={styles.container}>
-          {
-            this.state.blogs.map((blog,i) => this._renderItem(blog,i))
-          }
+      <ScrollView style={styles.scrollViewStyle}
+      horizontal={false}   // 水平方向
+      showsHorizontalScrollIndicator={false}  // 隐藏水平指示器
+      showsVerticalScrollIndicator={false}    // 隐藏垂直指示器
+      pagingEnabled={true}
+      >
+        {this.state.blogs.map((blog, i) => this._renderItem(blog, i))}
+        </ScrollView>
       </View>
     );
   }
@@ -75,6 +71,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+    width:GlobleStyles.window_width
+  },
+  scrollViewStyle:{
+    marginTop:5
   },
   welcome: {
     fontSize: 20,
